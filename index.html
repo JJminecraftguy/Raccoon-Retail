@@ -1,134 +1,50 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-		<meta content="utf-8" http-equiv="encoding">
-		<meta name="viewport" content="width=device-width">
-		<script type="importmap">
-		{
-			"imports": {
-				"three": "../deps/three/build/three.module.js"
-			}
-		}
-		</script>
-		<script type="module" src="bundle/assetWorkerPreload-aa5c3535.js"></script>
-		<script type="module" src="bundle/main-8e7a1553.js"></script>
-		<style>
-			body, html {
-				position: relative;
-				margin: 0;
-				height: 100%;
-				user-select: none;
-				-webkit-user-select: none;
-				-webkit-touch-callout: none;
-				overflow-x: hidden;
-				background-color: #fdd863;
-				container: page / size;
-			}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-			#progress {
-				position: absolute;
-				left: 50%;
-				bottom: 10%;
-				transform: translate(-50%, -50%);
-				z-index: 10;
-				-webkit-appearance: none;
-				appearance: none;
-				width: 180px;
-				height: 30px;
-				border: 6px solid #859955;
-				border-radius: 12px;
-				box-shadow: #54683d 0px 4px 0px;
-				overflow: hidden;
-			}
+    <!-- Import maps and game scripts (keep these if your game requires them) -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../deps/three/build/three.module.js"
+        }
+      }
+    </script>
+    <script type="module" src="bundle/assetWorkerPreload-aa5c3535.js"></script>
+    <script type="module" src="bundle/main-8e7a1553.js"></script>
 
-			#progress::-webkit-progress-bar {
-				background-color: #374526;
-			}
+    <style>
+      /* Remove default margins, padding and background */
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background: none;
+      }
 
-			#progress::-webkit-progress-value {
-				background-color: #bdd278;
-			}
+      /* Ensure the game container fills the screen */
+      #gameWrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-			#loadScreen {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				z-index: 1;
-				position: absolute;
-			}
+      #gameContainer {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+    </style>
 
-			#gameWrapper {
-				margin-top: 20px;
-				position: relative;
-				width: 100%;
-				height: 80%;
-				top: 0;
-				left: 0;
-				display: flex;
-				justify-content: center;
-			}
-			#gameWrapper.borderless {
-				margin-top: 0;
-				height: 100%;
-			}
-			#gameWrapper.borderless #gameContainer {
-				width: 100%;
-				border-radius: 0px;
-			}
-			#gameWrapper.borderless-animation {
-				transition: margin-top 1s, height 1s;
-			}
-
-			#gameContainer {
-				background-color: black;
-				width: min(80%, 1200px);
-				height: 100%;
-				overflow: hidden;
-				position: relative;
-				container: game / size;
-			}
-
-			.borderless-animation #gameContainer {
-				box-shadow: #0000004d 0px 10px 20px;
-				border-radius: 5px;
-				transition: width 1s, border-radius 1s;
-			}
-
-			@font-face {
-				font-family: 'Fredoka One';
-				font-style: normal;
-				font-weight: 400;
-				font-display: swap;
-				src: local('Fredoka One'), local('FredokaOne-Regular'), url(./static/FredokaOne.woff2) format('woff2');
-			}
-			@font-face {
-				font-family: 'Fredoka One';
-				font-style: normal;
-				font-weight: 700;
-				font-display: swap;
-				src: local('Fredoka One'), local('FredokaOne-Regular'), url(./static/FredokaOne.woff2) format('woff2');
-			}
-
-			body, html, button {
-				font-family: Fredoka One, Helvetica, Arial, sans-serif;
-			}
-
-			#gameDescription {
-				margin: 20px;
-				max-width: 800px;
-				margin: auto;
-			}
-
-			#gameDescription, #gameDescription a {
-				color: #382200;
-			}
-
-			#gameDescription a:hover {
-				text-decoration: none;
-			}
-		</style>
-		<title>Raccoon Retail</title>
+    <title>Raccoon Retail</title>
+  </head>
 		<meta name="description" content="Clumsy customers are making a big mess and it's your job to keep the supermarket clean.">
 		<meta name="keywords" content="Action, Arcade, 3D, html5, game, online game, web game, idle game, cleaning, clean-up, customer, mess, shop, shopping, supermarket, upgrade, upgrades, market, spill, driving, driving games, food, race, simulation, management games, management, idle">
 		<link rel="canonical" href="https://raccoonretail.com">
